@@ -5,9 +5,9 @@
       <h1>{{ $route.name.toUpperCase() }}</h1>
       <div v-for="p in projects" class="project" :key="p.id">
         <div class="card">
-          <h2 v-html="p.title" />
-          <p class="date" v-html="p.date" />
-          <p v-html="p.description" />
+          <Reveal tag="h2" :content="p.title" />
+          <Reveal tag="p" :content="p.date" :throttle="600" class="date" />
+          <Reveal tag="p" :content="p.description" :throttle="600" />
         </div>
         <VimeoPlayer :url="p.video" />
       </div>
@@ -20,6 +20,7 @@
 import { mapState } from 'vuex'
 
 import Nav from '@/components/Nav.vue'
+import Reveal from '@/components/Reveal.vue'
 import Footer from '@/components/Footer.vue'
 import VimeoPlayer from '@/components/VimeoPlayer.vue'
 
@@ -27,11 +28,9 @@ export default {
   name: 'projects',
   components: {
     Nav,
+    Reveal,
     Footer,
     VimeoPlayer,
-  },
-  mounted() {
-    console.log(this.projects)
   },
   computed: {
     ...mapState({
@@ -92,12 +91,35 @@ export default {
         h2 {
           font-size: 2em;
           margin-bottom: 10px;
+          transform: translateY(20px);
+          opacity: 0;
+          transition: transform 0.4s, opacity 0.4s;
+          &.visible {
+            transform: translateY(0);
+            opacity: 1;
+          }
+        }
+        p {
+          transform: translateY(20px);
+          opacity: 0;
+          transition: transform 0.4s, opacity 0.4s;
+          &.visible {
+            transform: translateY(0);
+            opacity: 1;
+          }
         }
         /deep/ p {
           font-size: 1.2em;
         }
         .date {
           margin-bottom: 20px;
+          transform: translateY(20px);
+          opacity: 0;
+          transition: transform 0.4s, opacity 0.4s;
+          &.visible {
+            transform: translateY(0);
+            opacity: 1;
+          }
         }
       }
       &::after {
