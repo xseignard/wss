@@ -1,0 +1,18 @@
+$darker-grey: #1d1d1d;
+$white: #ffffff;
+$grey: #c2c2c2;
+$accent: #ff4d4d;
+
+@mixin short-transition($delay: 0s) {
+  transition: 0.25s $delay ease-out;
+}
+@mixin long-transition($delay: 0s) {
+  transition: 0.5s $delay ease-out;
+}
+@mixin iterate($n) {
+  @for $i from 1 through $n {
+    &:nth-child(#{$i}) {
+      transition: all 0.2s #{$i * 0.1}s ease-out;
+    }
+  }
+}
