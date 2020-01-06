@@ -114,6 +114,10 @@ export default {
             opacity: 1;
           }
         }
+        /deep/ p {
+          font-size: 1.1em;
+          line-height: 1.5em;
+        }
         .date {
           margin-bottom: 20px;
           transform: translateY(20px);
