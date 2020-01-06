@@ -58,7 +58,8 @@ a {
   color: $grey;
   letter-spacing: 0;
   @media (max-width: 768px) {
-    font-size: 1.3em;
+    font-size: 1.1em;
+    line-height: 1.5em;
   }
 }
 a {

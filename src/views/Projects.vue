@@ -2,7 +2,7 @@
   <div class="page projects">
     <Nav />
     <div class="list">
-      <h1>{{ $route.name.toUpperCase() }}</h1>
+      <h1>{{ getTitle() }}</h1>
       <div v-for="p in projects" class="project" :key="p.id">
         <div class="card">
           <Reveal tag="h2" :content="p.title" />
@@ -36,11 +36,17 @@ export default {
     ...mapState({
       projects(state) {
         const route = this.$route.name
+        console.log(state.projects)
         return state.projects.filter(
           p => p.type.toLowerCase() === route.toLowerCase()
         )
       },
     }),
+  },
+  methods: {
+    getTitle() {
+      return this.$route.name.toUpperCase().replace('_', ' ')
+    },
   },
 }
 </script>
@@ -63,8 +69,7 @@ export default {
     }
     .project {
       display: flex;
-      align-items: center;
-      margin-top: 30px;
+      margin-top: 80px;
       @media (max-width: 768px) {
         margin-top: 0px;
         flex-direction: column;
@@ -89,6 +94,7 @@ export default {
           max-width: 100vw;
         }
         h2 {
+          color: $accent;
           font-size: 2em;
           margin-bottom: 10px;
           transform: translateY(20px);
@@ -107,9 +113,6 @@ export default {
             transform: translateY(0);
             opacity: 1;
           }
-        }
-        /deep/ p {
-          font-size: 1.2em;
         }
         .date {
           margin-bottom: 20px;

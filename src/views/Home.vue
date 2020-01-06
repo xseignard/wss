@@ -18,14 +18,18 @@
           class="cell"
           :style="{ backgroundImage: `url(${home.type_of_work.documentary})` }"
         >
-          <div class="layer"><h2>Documentary</h2></div>
+          <div class="layer">
+            <h2>Documentary</h2>
+          </div>
         </router-link>
         <router-link
-          to="commercial"
+          to="brand_content"
           class="cell"
           :style="{ backgroundImage: `url(${home.type_of_work.commercial})` }"
         >
-          <div class="layer"><h2>Commercial</h2></div>
+          <div class="layer">
+            <h2>Brand content</h2>
+          </div>
         </router-link>
       </div>
       <div class="row">
@@ -34,14 +38,18 @@
           class="cell"
           :style="{ backgroundImage: `url(${home.type_of_work.music})` }"
         >
-          <div class="layer"><h2>Music</h2></div>
+          <div class="layer">
+            <h2>Music</h2>
+          </div>
         </router-link>
         <router-link
           to="art"
           class="cell"
           :style="{ backgroundImage: `url(${home.type_of_work.art})` }"
         >
-          <div class="layer"><h2>Art</h2></div>
+          <div class="layer">
+            <h2>Art</h2>
+          </div>
         </router-link>
       </div>
     </section>
@@ -129,7 +137,6 @@ export default {
       width: 70%;
       @media (max-width: 768px) {
         width: 90%;
-        text-align: end;
       }
       /deep/ p {
         transform: translateY(20px);

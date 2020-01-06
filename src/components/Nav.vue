@@ -6,21 +6,15 @@
       <span></span>
     </div>
     <div class="nav--list">
-      <router-link to="/" @click.native="showMenu">
-        HOME
-      </router-link>
-      <router-link to="/documentary" @click.native="showMenu">
-        DOCUMENTARY
-      </router-link>
-      <router-link to="/commercial" @click.native="showMenu">
-        COMMERCIAL
-      </router-link>
-      <router-link to="/music" @click.native="showMenu">
-        MUSIC
-      </router-link>
-      <router-link to="/art" @click.native="showMenu">
-        ART
-      </router-link>
+      <router-link to="/" @click.native="showMenu">HOME</router-link>
+      <router-link to="/documentary" @click.native="showMenu"
+        >DOCUMENTARY</router-link
+      >
+      <router-link to="/brand_content" @click.native="showMenu"
+        >BRAND CONTENT</router-link
+      >
+      <router-link to="/music" @click.native="showMenu">MUSIC</router-link>
+      <router-link to="/art" @click.native="showMenu">ART</router-link>
     </div>
   </div>
 </template>

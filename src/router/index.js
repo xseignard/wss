@@ -17,8 +17,8 @@ const routes = [
     component: Projects,
   },
   {
-    path: '/commercial',
-    name: 'commercial',
+    path: '/brand_content',
+    name: 'brand_content',
     component: Projects,
   },
   {
