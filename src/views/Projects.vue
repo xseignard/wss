@@ -76,7 +76,8 @@ export default {
     }
     .project {
       display: flex;
-      margin-top: 80px;
+      margin-top: 120px;
+      width: 90vw;
       @media (max-width: 768px) {
         margin-top: 0px;
         flex-direction: column;
@@ -92,9 +93,16 @@ export default {
           }
         }
       }
+      iframe {
+        flex: 1;
+        @media (max-width: 768px) {
+          flex: unset;
+        }
+      }
       .card {
         margin: 0 20px;
-        max-width: 30vw;
+        // max-width: 30vw;
+        flex: 1;
         @media (max-width: 768px) {
           align-self: flex-start;
           margin-top: 30px;
