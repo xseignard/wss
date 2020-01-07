@@ -18,6 +18,8 @@
 
 <script>
 import { mapState } from 'vuex'
+import compareDesc from 'date-fns/compareDesc'
+import parse from 'date-fns/parse'
 
 import Nav from '@/components/Nav.vue'
 import Reveal from '@/components/Reveal.vue'
@@ -36,10 +38,15 @@ export default {
     ...mapState({
       projects(state) {
         const route = this.$route.name
-        console.log(state.projects)
-        return state.projects.filter(
-          p => p.type.toLowerCase() === route.toLowerCase()
-        )
+        const result = state.projects
+          .filter(p => p.type.toLowerCase() === route.toLowerCase())
+          .sort((a, b) => {
+            const dateA = parse(a.date, 'dd/MM/yyyy', new Date())
+            const dateB = parse(b.date, 'dd/MM/yyyy', new Date())
+            return compareDesc(dateA, dateB)
+          })
+        console.log(result)
+        return result
       },
     }),
   },
@@ -114,7 +121,8 @@ export default {
             opacity: 1;
           }
         }
-        /deep/ p {
+        /deep/ p,
+        /deep/ a {
           font-size: 1.1em;
           line-height: 1.5em;
         }
