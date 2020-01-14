@@ -19,7 +19,7 @@ import { mapState } from 'vuex'
 export default {
   computed: {
     ...mapState({
-      url: state => state.home.showreel,
+      url: state => state.home.hero_video,
     }),
   },
 }
