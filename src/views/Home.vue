@@ -146,6 +146,9 @@ export default {
         opacity: 0;
         transition: transform 0.4s, opacity 0.4s;
         margin-bottom: 30px;
+        @media (max-width: 768px) {
+          margin-bottom: 0;
+        }
         &:nth-child(2) {
           transition-delay: 0.2s;
         }

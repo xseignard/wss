@@ -45,7 +45,6 @@ export default {
             const dateB = parse(b.date, 'dd/MM/yyyy', new Date())
             return compareDesc(dateA, dateB)
           })
-        console.log(result)
         return result
       },
     }),
