@@ -9,7 +9,7 @@
     </section>
     <section class="about">
       <Reveal tag="div" :content="home.description" :throttle="600" />
-      <VimeoPlayer :url="home.showreel" />
+      <VideoPlayer :url="home.showreel" />
       <Scroll target=".projects" />
     </section>
     <section class="projects">
@@ -67,7 +67,7 @@ import Reveal from '@/components/Reveal.vue'
 import Video from '@/components/Video.vue'
 import Footer from '@/components/Footer.vue'
 import Scroll from '@/components/Scroll.vue'
-import VimeoPlayer from '@/components/VimeoPlayer.vue'
+import VideoPlayer from '@/components/VideoPlayer.vue'
 
 export default {
   name: 'home',
@@ -77,7 +77,7 @@ export default {
     Video,
     Footer,
     Scroll,
-    VimeoPlayer,
+    VideoPlayer,
   },
   mounted() {
     const el = this.$refs.title.$el

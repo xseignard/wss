@@ -9,7 +9,7 @@
           <Reveal tag="p" :content="p.date" :throttle="600" class="date" />
           <Reveal tag="p" :content="p.description" :throttle="600" />
         </div>
-        <VimeoPlayer :url="p.video" />
+        <VideoPlayer :url="p.video" />
       </div>
     </div>
     <Footer />
@@ -24,7 +24,7 @@ import parse from 'date-fns/parse'
 import Nav from '@/components/Nav.vue'
 import Reveal from '@/components/Reveal.vue'
 import Footer from '@/components/Footer.vue'
-import VimeoPlayer from '@/components/VimeoPlayer.vue'
+import VideoPlayer from '@/components/VideoPlayer.vue'
 
 export default {
   name: 'projects',
@@ -32,7 +32,7 @@ export default {
     Nav,
     Reveal,
     Footer,
-    VimeoPlayer,
+    VideoPlayer,
   },
   computed: {
     ...mapState({

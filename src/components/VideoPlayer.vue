@@ -1,13 +1,17 @@
 <template>
-  <!-- <iframe
-    src="https://player.vimeo.com/video/252334051?color=ff4d4d&title=0&byline=0&portrait=0"
-    width="640"
-    height="360"
-    frameborder="0"
-    allow="autoplay; fullscreen"
-    allowfullscreen
-  ></iframe> -->
   <iframe
+    v-if="isYoutube()"
+    :src="
+      'https://www.youtube-nocookie.com/embed/' +
+        getYoutubeId(url) +
+        '?rel=0&modestbranding=1&iv_load_policy=3&showinfo=0'
+    "
+    frameborder="0"
+    allow="autoplay; encrypted-media"
+    allowfullscreen
+  ></iframe>
+  <iframe
+    v-else
     :src="
       'https://player.vimeo.com/video/' +
         getVimeoId(url) +
@@ -27,8 +31,19 @@ export default {
     url: String,
   },
   methods: {
+    isYoutube() {
+      return this.url.includes('youtube')
+    },
     getVimeoId() {
       return this.url.substr(this.url.lastIndexOf('/') + 1)
+    },
+    getYoutubeId() {
+      const start = this.url.lastIndexOf('watch?v=')
+      const end = this.url.includes('&t=')
+        ? this.url.lastIndexOf('&t=')
+        : this.url.length
+      const id = this.url.substring(start + 8, end)
+      return id
     },
   },
 }
