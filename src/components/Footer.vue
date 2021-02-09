@@ -12,11 +12,11 @@
       </a>
     </div>
     <a
-      href="mailto:contact@whyoseriousproductions.fr"
+      href="mailto:contact@whysoseriousproductions.fr"
       target="_blank"
       class="mail"
     >
-      contact@whyoseriousproductions.fr
+      contact@whysoseriousproductions.fr
     </a>
   </footer>
 </template>
